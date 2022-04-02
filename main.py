@@ -1,7 +1,10 @@
 import pygame,sys
+from sprites import *
+from config import *
 
 pygame.init()
-screen = pygame.display.set_mode((800,600))
+clock = pygame.time.Clock()
+screen = pygame.display.set_mode(display_size)
 
 while True:
 	for event in pygame.event.get():
@@ -9,5 +12,7 @@ while True:
 			pygame.quit()
 			sys.exit()
 
-	screen.fill("white")
+	screen.fill(bg_colour)
+
+	clock.tick(fps)
 	pygame.display.flip()
